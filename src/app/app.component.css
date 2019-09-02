@@ -1,0 +1,18 @@
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.btn-wrapper {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 50px;
+}
+
+button {
+  width: 100px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
