@@ -1,0 +1,16 @@
+table {
+  margin: 0 auto;
+  width: 60%;
+}
+button {
+  border: none;
+  padding: 5px;
+}
+#delete {
+  background-color: red;
+  width: 80px;
+}
+#edit {
+  background-color: orange;
+  width: 50px;
+}

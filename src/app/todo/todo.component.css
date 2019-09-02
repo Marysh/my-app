@@ -1,0 +1,17 @@
+.todo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto 30px;
+}
+input  {
+  width: 70%;
+  padding: 10px;
+}
+button {
+  width: 25%;
+  padding: 10px;
+  background-color: green;
+  border: none;
+  cursor: pointer;
+}

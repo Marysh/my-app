@@ -1,0 +1,5 @@
+<div id="usersWrapper">
+  <div *ngFor="let user of users; let i = index">
+    <div class="user-card">{{user.name}}<br>{{user.phone}}<br>{{user.address.city}}</div>
+  </div>
+</div>

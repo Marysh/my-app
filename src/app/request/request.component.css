@@ -1,0 +1,9 @@
+.user-card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 0 auto 10px;
+  width: 550px;
+}
+#usersWrapper {
+  padding: 30px;
+}

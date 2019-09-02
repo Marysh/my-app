@@ -1,0 +1,25 @@
+<table class="table table-striped" id="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Task</th>
+    <th scope="col">Check</th>
+    <th scope="col">Done/In Progress</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let task of tasks; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>
+      <img class="mr-2" style="width: 20px">
+      {{ task.name }}
+    </td>
+    <td><input type="checkbox" (click)="changeStatus(task)"></td>
+    <td>{{task.status}}</td>
+    <td><button id="edit">Edit</button></td>
+    <td><button id="delete">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
