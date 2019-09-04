@@ -28,7 +28,19 @@ export class TableComponent {
   ];
 
   changeStatus(task) {
-    task.status = 'Done';
+    if (task.status === 'In Progress') {
+      task.status = 'Done';
+      task.status.style = 'color: green';
+    } else {
+      task.status = 'In Progress';
+      task.status.style = 'color: red';
+    }
   }
 
+  deleteTask(task, index) {
+    this.tasks.splice(index, 1);
+  }
+
+  editTaskName() {
+  }
 }

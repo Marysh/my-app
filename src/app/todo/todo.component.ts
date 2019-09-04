@@ -13,7 +13,7 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
   }
 
-  addCase = () => {
+  addTask = () => {
     console.log('2');
     document.getElementById('table');
   }
