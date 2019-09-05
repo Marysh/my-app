@@ -30,10 +30,8 @@ export class TableComponent {
   changeStatus(task) {
     if (task.status === 'In Progress') {
       task.status = 'Done';
-      task.status.style = 'color: green';
     } else {
       task.status = 'In Progress';
-      task.status.style = 'color: red';
     }
   }
 
@@ -42,5 +40,10 @@ export class TableComponent {
   }
 
   editTaskName() {
+    document.getElementById('edit-task').style.display = 'block';
+  }
+
+  saveTaskName(task, index) {
+    document.getElementById('save').style.display = 'block';
   }
 }

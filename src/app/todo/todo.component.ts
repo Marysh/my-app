@@ -14,7 +14,6 @@ export class TodoComponent implements OnInit {
   }
 
   addTask = () => {
-    console.log('2');
-    document.getElementById('table');
+    console.log(document.getElementById('input'));
   }
 }
