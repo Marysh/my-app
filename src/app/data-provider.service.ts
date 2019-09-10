@@ -7,8 +7,19 @@ export class DataProviderService {
 
   public todoList = [
     {
-      name: 'Bootstrap',
-      status: 'In Progress'
+      name: 'Bootstrap 1',
+      status: 'In Progress',
+      allowDelete: false
+    },
+    {
+      name: 'Bootstrap 2',
+      status: 'In Progress',
+      allowDelete: false
+    },
+    {
+      name: 'Bootstrap 3',
+      status: 'In Progress',
+      allowDelete: false
     }
   ];
 
@@ -17,7 +28,7 @@ export class DataProviderService {
 
 
   addNewTask(value) {
-    this.todoList.push({name: value, status: 'In Progress'});
+    this.todoList.push({name: value, status: 'In Progress', allowDelete: false});
   }
 
 }

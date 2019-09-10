@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { EditService } from '../edit.service';
+import { DataProviderService } from '../data-provider.service';
 
 
 @Component({
@@ -7,6 +9,18 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./editing-row.component.css']
 })
 export class EditingRowComponent implements OnInit {
-  constructor() {
+  inputVal;
+  @ViewChild('input', null) inputRef: ElementRef;
+
+  constructor(private editService: EditService, private dataProviderService: DataProviderService) {
+    this.inputVal = dataProviderService.todoList[editService.getEditingElIndex()].name;
+  }
+
+  ngOnInit(): void {
+  }
+
+  saveTaskName() {
+    this.dataProviderService.todoList[this.editService.getEditingElIndex()].name = this.inputRef.nativeElement.value;
+    this.editService.hide();
   }
 }

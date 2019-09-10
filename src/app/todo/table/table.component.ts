@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnChanges, Output, Input, OnInit} from '@angular/core';
 import {DataProviderService} from '../../data-provider.service';
+import { EditService } from '../../edit.service';
 
 interface Task {
   name: string;
@@ -16,9 +17,9 @@ export class TableComponent implements OnInit {
   @Input() newTask: any;
   @Input() selectedRow: any;
 
-  allowDelete = false;
+  // allowDelete = false;
 
-  constructor(private dataProvide: DataProviderService) {
+  constructor(private dataProvide: DataProviderService, private editService: EditService) {
 
   }
 
@@ -30,15 +31,16 @@ export class TableComponent implements OnInit {
   changeStatus(task) {
     if (task.status === 'In Progress') {
       task.status = 'Done';
-      this.allowDelete = true;
+      task.allowDelete = true;
+      // this.allowDelete = true;
     } else {
       task.status = 'In Progress';
-      this.allowDelete = false;
+      task.allowDelete = false;
     }
   }
 
-  editTaskName(task, i) {
-
+  editTaskName(i) {
+    this.editService.show(i);
   }
   setColor(task) {
     return task.status === 'In Progress' ? '#ff6548' : 'red';
