@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {DataProviderService} from '../data-provider.service';
 
 @Component({
   selector: 'app-todo',
@@ -7,13 +8,20 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-  constructor() {
+  editClicked: boolean = false;
+
+  constructor(private dataProvider: DataProviderService) {
   }
+
 
   ngOnInit() {
+    console.log(this.dataProvider.todoList);
   }
 
-  addTask = () => {
-    console.log(document.getElementById('input'));
+  addTask(input) {
+    if (input.value !== '') {
+      this.dataProvider.addNewTask(input.value);
+    }
   }
+
 }

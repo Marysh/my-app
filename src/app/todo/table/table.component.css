@@ -2,25 +2,25 @@ table {
   margin: 0 auto;
   width: 60%;
 }
+
 button {
   border: none;
   padding: 5px;
   cursor: pointer;
 }
+
 #delete {
-  background-color: red;
   width: 80px;
 }
-#delete:enabled {
-  background-color: orangered;
-}
+
+
 #edit {
   background-color: orange;
   width: 50px;
 }
+
 #save {
   background-color: #28a745;
 }
-#edit-task {
-  display: none;
-}
+
+
