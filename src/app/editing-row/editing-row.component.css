@@ -1,0 +1,13 @@
+#edit-task {
+  margin: 0 auto;
+  width: 34%;
+  padding: .75rem;
+  vertical-align: top;
+  justify-content: flex-end;
+}
+#editedInput {
+  margin-right: 40px;
+}
+.isDisplayed {
+  display: flex!important;
+}
