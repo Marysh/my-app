@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnChanges, Output, Input, OnInit} from '@angular/core';
 import {DataProviderService} from '../../data-provider.service';
-import { EditService } from '../../edit.service';
+import {EditService} from '../../edit.service';
 
 interface Task {
   name: string;
@@ -40,8 +40,13 @@ export class TableComponent implements OnInit {
   }
 
   editTaskName(i) {
-    this.editService.show(i);
+    if (this.editService.showEdit) {
+      this.editService.reinit();
+    } else {
+      this.editService.show(i);
+    }
   }
+
   setColor(task) {
     return task.status === 'In Progress' ? '#ff6548' : 'red';
   }
@@ -50,7 +55,5 @@ export class TableComponent implements OnInit {
     this.tasks.splice(index, 1);
   }
 
-  saveTaskName(task, i) {
-  }
 
 }

@@ -13,12 +13,15 @@ export class EditingRowComponent implements OnInit {
   @ViewChild('input', null) inputRef: ElementRef;
 
   constructor(private editService: EditService, private dataProviderService: DataProviderService) {
-    this.inputVal = dataProviderService.todoList[editService.getEditingElIndex()].name;
+    this.setInputValue();
   }
 
   ngOnInit(): void {
   }
 
+  setInputValue() {
+    this.inputVal = this.dataProviderService.todoList[this.editService.getEditingElIndex()].name;
+  }
   saveTaskName() {
     this.dataProviderService.todoList[this.editService.getEditingElIndex()].name = this.inputRef.nativeElement.value;
     this.editService.hide();

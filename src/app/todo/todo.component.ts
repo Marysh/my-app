@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DataProviderService } from '../data-provider.service';
-import { EditService } from '../edit.service';
+import {Component, OnInit} from '@angular/core';
+import {DataProviderService} from '../data-provider.service';
+import {EditService} from '../edit.service';
 
 @Component({
   selector: 'app-todo',
@@ -9,15 +9,10 @@ import { EditService } from '../edit.service';
 })
 export class TodoComponent implements OnInit {
   showEditing;
-
-  // editClicked: boolean = false;
-
   constructor(private dataProvider: DataProviderService, private editService: EditService) {
     this.showEditing = editService.showEdit;
     editService.editTriggered.subscribe(
-
       () => {
-        // console.log(editService.showEdit)
         this.showEditing = editService.showEdit;
       }
     );
@@ -35,6 +30,7 @@ export class TodoComponent implements OnInit {
   addTask(input) {
     if (input.value !== '') {
       this.dataProvider.addNewTask(input.value);
+      input.value = '';
     }
   }
 

@@ -23,6 +23,9 @@ export class EditService {
   public getEditingElIndex() {
     return this.editingElIndex;
   }
+  public reinit() {
+
+  }
 
 
 
