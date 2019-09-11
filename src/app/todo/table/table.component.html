@@ -18,10 +18,10 @@
     <td><input type="checkbox" (click)="changeStatus(task)"></td>
     <td>{{task.status}}</td>
     <td>
-      <button id="edit" (click)="editTaskName(i)">Edit</button>
+      <button id="edit" (click)="editTaskName(task, i)">Edit</button>
     </td>
     <td>
-      <button [ngStyle]="{backgroundColor: setColor(task)}" id="delete" [disabled]="!task.allowDelete" (click)="deleteTask(task,i)">Delete</button>
+      <button [ngStyle]="{backgroundColor: setColor(task)}" id="delete" [disabled]="!task.allowDelete" (click)="deleteTask(i)">Delete</button>
     </td>
   </tr>
   </tbody>

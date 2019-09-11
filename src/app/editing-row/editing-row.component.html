@@ -1,4 +1,4 @@
 <div id="edit-task">
-  <input type="text" #input [value]="inputVal">
-  <button id="save" (click)="saveTaskName()">Save</button>
+  <input type="text" #input [value]="objectToEdit.name">
+  <button id="save" (click)="saveTaskName(input.value, objectToEdit.id)">Save</button>
 </div>

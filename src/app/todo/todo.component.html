@@ -4,4 +4,4 @@
 </div>
 <app-table></app-table>
 <!--<app-editing-row *ngIf="editClicked"></app-editing-row>-->
-<app-editing-row *ngIf="showEditing"></app-editing-row>
+<app-editing-row *ngIf="editService.editingObject" [objectToEdit]="editService.editingObject"></app-editing-row>

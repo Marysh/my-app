@@ -1,32 +1,23 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class EditService {
-  showEdit = false;
-  editingElIndex;
-  editTriggered = new EventEmitter();
-  constructor() { }
 
-  public show(index) {
-    this.showEdit = true;
-    this.editingElIndex = index;
-    this.editTriggered.emit();
+  editingObject = null;
+
+  constructor() {
   }
+
+  public show(task, index) {
+    this.editingObject = task;
+  }
+
   public hide() {
-    this.showEdit = false;
-    this.editTriggered.emit();
+    this.editingObject = null;
   }
-
-  public getEditingElIndex() {
-    return this.editingElIndex;
-  }
-  public reinit() {
-
-  }
-
 
 
 }

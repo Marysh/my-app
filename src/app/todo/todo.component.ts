@@ -8,23 +8,16 @@ import {EditService} from '../edit.service';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  showEditing;
-  constructor(private dataProvider: DataProviderService, private editService: EditService) {
-    this.showEditing = editService.showEdit;
-    editService.editTriggered.subscribe(
-      () => {
-        this.showEditing = editService.showEdit;
-      }
-    );
+  constructor(private dataProvider: DataProviderService, public editService: EditService) {
+    // editService.editTriggered.subscribe(
+    //   () => {
+    //     this.showEditing = editService.showEdit;
+    //   }
+    // );
   }
 
 
   ngOnInit() {
-    // console.log(this.dataProvider.todoList);
-    // this.editService.showEdit
-    //   .subscribe(() => {
-    //
-    //   });
   }
 
   addTask(input) {

@@ -17,8 +17,6 @@ export class TableComponent implements OnInit {
   @Input() newTask: any;
   @Input() selectedRow: any;
 
-  // allowDelete = false;
-
   constructor(private dataProvide: DataProviderService, private editService: EditService) {
 
   }
@@ -39,20 +37,17 @@ export class TableComponent implements OnInit {
     }
   }
 
-  editTaskName(i) {
-    if (this.editService.showEdit) {
-      this.editService.reinit();
-    } else {
-      this.editService.show(i);
-    }
+  editTaskName(task, i) {
+    this.editService.show(task, i);
   }
 
   setColor(task) {
     return task.status === 'In Progress' ? '#ff6548' : 'red';
   }
 
-  deleteTask(task, index) {
+  deleteTask(index) {
     this.tasks.splice(index, 1);
+    this.editService.hide();
   }
 
 
