@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnChanges, Output, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataProviderService} from '../../data-provider.service';
 import {EditService} from '../../edit.service';
 
@@ -30,7 +30,6 @@ export class TableComponent implements OnInit {
     if (task.status === 'In Progress') {
       task.status = 'Done';
       task.allowDelete = true;
-      // this.allowDelete = true;
     } else {
       task.status = 'In Progress';
       task.allowDelete = false;
@@ -38,7 +37,11 @@ export class TableComponent implements OnInit {
   }
 
   editTaskName(task, i) {
-    this.editService.show(task, i);
+    if (this.editService.editingObject === task) {
+      this.editService.editingObject = null;
+    } else {
+      this.editService.show(task, i);
+    }
   }
 
   setColor(task) {
@@ -46,7 +49,7 @@ export class TableComponent implements OnInit {
   }
 
   deleteTask(index) {
-    this.tasks.splice(index, 1);
+    this.dataProvide.deleteTask(index);
     this.editService.hide();
   }
 

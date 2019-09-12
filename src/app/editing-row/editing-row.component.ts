@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataProviderService} from '../data-provider.service';
 import {EditService} from '../edit.service';
 
@@ -19,8 +19,10 @@ export class EditingRowComponent implements OnInit {
   }
 
   saveTaskName(newName, id: number) {
-    this.dataProviderService.saveTaskName(newName, id);
-    this.editService.hide();
+    if (newName !== '') {
+      this.dataProviderService.saveTaskName(newName, id);
+      this.editService.hide();
+    }
   }
 
 }

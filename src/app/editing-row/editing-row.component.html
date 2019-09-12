@@ -1,4 +1,8 @@
-<div id="edit-task">
-  <input type="text" #input [value]="objectToEdit.name">
-  <button id="save" (click)="saveTaskName(input.value, objectToEdit.id)">Save</button>
+<div class="edit-wrapper">
+  <div id="edit-task">
+    <input type="text" #input [value]="objectToEdit.name">
+    <button id="save" [ngStyle]="{'backgroundColor': 'green'}" (click)="saveTaskName(input.value, objectToEdit.id)">
+      Save
+    </button>
+  </div>
 </div>

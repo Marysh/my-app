@@ -11,16 +11,13 @@ button {
 
 #delete {
   width: 80px;
+  color: white;
 }
 
 
 #edit {
   background-color: orange;
   width: 50px;
-}
-
-#save {
-  background-color: #28a745;
 }
 
 

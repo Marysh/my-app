@@ -39,8 +39,8 @@ export class DataProviderService {
     this.todoList[index].name = newTaskName;
   }
 
-  deleteTask() {
-
+  deleteTask(task) {
+    this.todoList.splice(task, 1);
   }
 
 }

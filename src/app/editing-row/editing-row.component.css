@@ -1,13 +1,22 @@
-#edit-task {
+.edit-wrapper {
   margin: 0 auto;
-  width: 34%;
+  width: 60%;
   padding: .75rem;
-  vertical-align: top;
-  justify-content: flex-end;
+  display: flex;
+  justify-content: center;
+}
+input {
+  padding: .30rem;
+  margin-right: 30px;
+}
+#edit-task {
+  padding: .75rem;
 }
 #editedInput {
   margin-right: 40px;
 }
-.isDisplayed {
-  display: flex!important;
+button {
+  width: 50px;
+  padding: .45rem;
+  color: white;
 }
