@@ -8,7 +8,7 @@ import {EditService} from '../edit.service';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  constructor(public dataProvider: DataProviderService, public editService: EditService) {
+  constructor(private dataProvider: DataProviderService, public editService: EditService) {
   }
 
   ngOnInit() {

@@ -15,7 +15,7 @@
     <td>
       {{ task.name }}
     </td>
-    <td><input type="checkbox" (click)="changeStatus(task)"></td>
+    <td><input type="checkbox" (click)="changeStatus(task)" [checked]="task.status === 'Done'"></td>
     <td>{{task.status}}</td>
     <td>
       <button id="edit" (click)="editTaskName(task, i)">Edit</button>

@@ -18,9 +18,9 @@ export class EditingRowComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveTaskName(newName, id: number) {
+  editTask(newName, id: number) {
     if (newName !== '') {
-      this.dataProviderService.saveTaskName(newName, id);
+      this.dataProviderService.editTask({name: newName}, id);
       this.editService.hide();
     }
   }
